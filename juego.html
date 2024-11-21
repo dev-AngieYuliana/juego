@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra Papel Tijera</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="contenedor">
+        <h2>Bienvenido...</h2>
+        <p>Que empiece el juego, buena suerte: </p>
+        <button class="piedra" onclick="play('piedra')">✊ Piedra</button>
+        <button class="papel" onclick="play('papel')">✋ Papel</button>
+        <button class="tijeras" onclick="play('tijeras')"> ✌️ Tijeras</button>
+        <p id="result"></p>
+        <button class ="bBasicos" onclick="cerrarSesion()">Cerrar Sesión</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
