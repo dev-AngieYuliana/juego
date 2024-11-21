@@ -8,6 +8,11 @@ class User {
 class juego {
     constructor() {
         this.choices = ['piedra', 'papel', 'tijera'];
+        this.emojis = {
+            piedra: '✊',
+            papel: '✋',
+            tijera: '✌️'
+        };
         this.currentUser = null;
     }
 
@@ -28,7 +33,7 @@ class juego {
                 alert('Inicio de sesión exitoso');
                 window.location.href = "juego.html"; 
             } else {
-                alert('Contraseña incorrecta');
+                alert('Usuario o Contraseña Incorrecta');
             }
         } else {
             alert('Usuario no registrado');
@@ -56,7 +61,11 @@ class juego {
             result = 'Perdiste';
         }
 
-        return `Jugador: ${userChoice}, Cortana: ${computerChoice}. ¡${result}!`;
+        return `
+            Jugador: ${this.emojis[userChoice]} <b>${userChoice}</b>, 
+            Cortana: ${this.emojis[computerChoice]} <b>${computerChoice}</b>. 
+            <strong>¡${result}!</strong>
+        `;
     }
 }
 
@@ -74,10 +83,11 @@ function registroValidacion() {
     game.registrarUsuario(username, password); 
 }
 
-function play(userChoice) {
+function play(button) {
+    const userChoice = button.getAttribute('data-choice'); 
     const resultDiv = document.getElementById('result');
     const result = game.jugar(userChoice); 
-    resultDiv.innerHTML = result;
+    resultDiv.innerHTML = result; 
 }
 
 function cerrarSesion() {
