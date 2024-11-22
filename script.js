@@ -20,7 +20,7 @@ class juego {
         const user = new User(username, password);
         localStorage.setItem(username, JSON.stringify(user));
         alert('Registro exitoso');
-        window.location.href = "inicioSesion.html"; 
+        window.location.href = "index.html"; 
     }
 
     inicioValidacion(username, password) {
@@ -42,7 +42,7 @@ class juego {
 
     cerrarSesion() {
         localStorage.removeItem("currentUser");
-        window.location.href = "inicioSesion.html";
+        window.location.href = "index.html";
     }
 
     jugar(userChoice) {
